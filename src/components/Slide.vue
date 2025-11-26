@@ -12,16 +12,22 @@
             <div class="w-full">
               <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-12">
-                  <div class="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3">
+                  <div
+                      class="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3"
+                  >
                     <div class="text-center py-16 sm:py-20 lg:py-28">
-                      <h3 class="pt-16 sm:pt-20 text-base font-semibold tracking-wide uppercase text-gray-500">
-                        Luiz Felipe
+                      <h3
+                          class="pt-16 sm:pt-20 text-base font-semibold tracking-wide uppercase text-gray-500"
+                      >
+                        Luiz Felipe,
+                        Gustavo,
+                        João
                       </h3>
                       <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold">
-                        Tipos de Estrutura de Dados
+                        Consistent Hashing
                       </h1>
                       <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
-                       Árvores, Buscas, Hash e SkipList
+                        Explicação e Código fonte
                       </p>
                     </div>
                   </div>
@@ -30,7 +36,9 @@
             </div>
 
             <!-- BG opcional -->
-            <div class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-gray-50 to-white"></div>
+            <div
+                class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-gray-50 to-white"
+            ></div>
           </div>
         </div>
 
@@ -39,43 +47,44 @@
           <div class="relative flex items-center">
             <div class="w-full">
               <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-12">
-                  <div class="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3">
-                    <div class="text-center py-16 sm:py-20 lg:py-28">
-                      <h3 class="pt-16 sm:pt-20 text-base font-semibold tracking-wide uppercase text-gray-500">
-                        UEPG
-                      </h3>
-                      <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold">
-                        Universidade Estadual de Ponta Grossa
-                      </h1>
-                      <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
-                        Trabalho Avaliativo
-                      </p>
-                    </div>
-                  </div>
+                <div
+                    class="flex flex-col items-center justify-center py-20 sm:py-24 lg:py-28"
+                >
+                  <!-- Só a imagem, sem borda/fundo -->
+                  <a
+                      href="https://pt.wikipedia.org/wiki/Universidade_Estadual_de_Ponta_Grossa"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                  >
+                    <img
+                        :src="uepgLogo"
+                        alt="Universidade Estadual de Ponta Grossa"
+                        class="h-24 md:h-32 lg:h-40 w-auto object-contain"
+                    />
+                  </a>
                 </div>
               </div>
             </div>
 
             <!-- BG opcional -->
-            <div class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-gray-50 to-white"></div>
+            <div
+                class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-gray-50 to-white"
+            ></div>
           </div>
         </div>
-
-
       </div>
     </div>
 
     <!-- Controles -->
     <button
-        class="absolute left-3 top-1/2 -translate-y-1/2 inline-flex items-center justify-center p-2 bg-white/70 backdrop-blur hover:bg-white"
+        class="absolute left-3 top-1/2 -translate-y-1/2 inline-flex items-center justify-center p-2"
         @click="prev"
         aria-label="Slide anterior"
     >
       <i class="bi bi-chevron-left text-xl"></i>
     </button>
     <button
-        class="absolute right-3 top-1/2 -translate-y-1/2 inline-flex items-center justify-center p-2 bg-white/70 backdrop-blur hover:bg-white"
+        class="absolute right-3 top-1/2 -translate-y-1/2 inline-flex items-center justify-center p-2"
         @click="next"
         aria-label="Próximo slide"
     >
@@ -98,9 +107,10 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import uepgLogo from '../Images/Logo_State_University_of_Ponta_Grossa.png'
 
 const current = ref(0)
-const total = 2 // quantidade de slides
+const total = 2
 
 function next () {
   current.value = (current.value + 1) % total
@@ -114,7 +124,6 @@ function go (idx) {
   current.value = idx
 }
 
-// autoplay opcional (comente as linhas abaixo se não quiser)
 let timer = null
 onMounted(() => {
   timer = setInterval(next, 6000)
@@ -123,7 +132,3 @@ onBeforeUnmount(() => {
   if (timer) clearInterval(timer)
 })
 </script>
-
-<style scoped>
-/* Sem estilos obrigatórios: tudo por utilitárias Tailwind */
-</style>
