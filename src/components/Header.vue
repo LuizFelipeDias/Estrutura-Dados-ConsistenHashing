@@ -50,7 +50,7 @@
           <!-- Git: link externo -->
           <a
               v-if="item === 'Git'"
-              href="https://github.com/JRafaelRosa/Estrutura-de-Dados/tree/main/hash/Consistent%20hash"
+              href="https://github.com/LuizFelipeDias/Estrutura-Dados-ConsistenHashing"
               target="_blank"
               rel="noopener noreferrer"
               class="text-xl hover:text-green-500 duration-300"
